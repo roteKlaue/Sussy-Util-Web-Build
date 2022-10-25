@@ -1,0 +1,34 @@
+{
+  "name": "sussyutilbyraphaelbader",
+  "version": "1.4.2",
+  "description": "Util package made by me",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc",
+    "prepublish": "tsc",
+    "publish": "npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roteKlaue/SussyUtilMadeByMe.git"
+  },
+  "keywords": [
+    "js",
+    "ts",
+    "JavaScript",
+    "EcmaScript",
+    "Util",
+    "TypeScript",
+    "Raphael",
+    "Bader",
+    "Jonas",
+    "Koch",
+    "Felix",
+    "Aron",
+    "Heger"
+  ],
+  "author": "roteKlaue",
+  "license": "MIT"
+}
