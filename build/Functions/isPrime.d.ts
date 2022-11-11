@@ -1,1 +1,1 @@
-export default function isPrime(num: number): boolean;
+export default function (num: number): boolean;

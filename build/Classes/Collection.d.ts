@@ -6,7 +6,7 @@ export default class Collection<K, V> {
         key: K;
         value: V;
     }): void;
-    remove(key: K): void;
+    remove(key: K): MapEntries<K, V>;
     toString(): string;
     toArray(): MapEntries<K, V>[];
 }

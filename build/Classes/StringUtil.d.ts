@@ -1,14 +1,9 @@
-import Set from "./Set";
 export default class StringUtil {
-    private characterset;
     constructor();
     static reverse(input: string): string;
-    get charset(): Set<string>;
-    removeChars(...string: string[]): void;
-    addChars(...string: string[]): void;
-    randomCharacter(): string;
-    randomString(length: number): string;
-    randomDiscordUsername(withSufix?: boolean): string;
+    static randomCharacter(charset?: string): string;
+    static randomString(length: number, characterset?: string): string;
+    static randomDiscordUsername(withSufix?: boolean): string;
     static isDiscordUsername(username: string): boolean;
     static isNumeric(value: string): boolean;
     static isStrongPassword(value: string): boolean;
@@ -34,6 +29,13 @@ export default class StringUtil {
     static toCharCode(str: string): string;
     static protectEmail(str: string): string;
     static swapCase(str: string): string;
-    generatePassword(length: number): string;
+    static generatePassword(length: number, characters?: string): string;
     static randomColorCode(): string;
+    static wordCount(str: string): number;
+    static getRatingString(rate: number): string;
+    static normalizeLineBreaks(str: string, lineEnd?: string): string;
+    static contains(str: string, substring: string, fromIndex: number): boolean;
+    static repeat(str: string, n: number): string;
+    static rpad(str: string, minLen: number, ch?: string): string;
+    static lpad(str: string, minLen: number, ch?: string): string;
 }

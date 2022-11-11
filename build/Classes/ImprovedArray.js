@@ -12,11 +12,15 @@ export default class ImprovedArray extends Array {
         return this[this.getRandomIndex()];
     }
     remove(index) {
+        if (typeof index !== 'number')
+            throw new TypeError('index must be a number');
         if (index >= this.length || index < 0)
             throw new IndexOutOfBoundsError(`${index} is out of bounds for length: ${this.length}`);
-        this.splice(Math.floor(index), 1);
+        return this.splice(Math.floor(index), 1)[0];
     }
     insertAt(index, ...items) {
+        if (typeof index !== 'number')
+            throw new TypeError('index must be a number');
         if (index >= this.length || index < 0)
             throw new IndexOutOfBoundsError(`${index} is out of bounds for length: ${this.length}`);
         this.push(...items, ...this.splice(index, this.length - index - 1));
@@ -55,9 +59,25 @@ export default class ImprovedArray extends Array {
             this[lengthArr] = this[randomIndex];
             this[randomIndex] = temp;
         }
-        return this;
     }
     countOccurrences(value) {
         return this.reduce((a, v) => v === value ? a + 1 : a + 0, 0);
+    }
+    static flat(arr) {
+        const result = [];
+        for (const item of arr) {
+            if (Array.isArray(item)) {
+                result.push(...this.flat(item));
+            }
+            else {
+                result.push(item);
+            }
+        }
+        return result;
+    }
+    flatten() {
+        const newARR = ImprovedArray.flat(this);
+        this.clear();
+        this.push(...newARR);
     }
 }

@@ -1,36 +1,23 @@
-import Set from "./Set";
+import ImprovedArray from "./ImprovedArray";
 export default class StringUtil {
-    constructor() {
-        this.characterset = new Set(...'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.split(''));
-    }
+    constructor() { }
     static reverse(input) {
         return input.split('').reverse().join('');
     }
-    get charset() {
-        return this.characterset;
+    static randomCharacter(charset) {
+        charset = charset || "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        const set = new ImprovedArray(...new Set(...charset.split('')));
+        return set.getRandomElement();
     }
-    removeChars(...string) {
-        for (const str of string) {
-            this.characterset.delete(str);
-        }
-        ;
-    }
-    addChars(...string) {
-        for (const str of string) {
-            str.split('').forEach(e => this.characterset.push(e));
-        }
-    }
-    randomCharacter() {
-        return this.characterset.get(Math.floor(Math.random() * this.characterset.length()));
-    }
-    randomString(length) {
+    static randomString(length, characterset) {
+        characterset = characterset || "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         let result = '';
         for (let i = 0; i < length; i++) {
-            result += this.randomCharacter();
+            result += this.randomCharacter(characterset);
         }
         return result;
     }
-    randomDiscordUsername(withSufix = false) {
+    static randomDiscordUsername(withSufix = false) {
         const length = Math.floor(Math.random() * 29) + 4;
         let name = this.randomString(length);
         if (!StringUtil.isDiscordUsername(name)) {
@@ -122,15 +109,51 @@ export default class StringUtil {
     static swapCase(str) {
         return str.replace(/ ([a-z]+ ) | ( [A-Z]+ )/g, (match, chr) => chr ? match.toUpperCase() : match.toLowerCase());
     }
-    generatePassword(length) {
-        const result = this.randomString(length);
-        if (StringUtil.isWeakPassword(this.characterset.toArray().reduce((e, r) => e + r)))
+    static generatePassword(length, characters) {
+        characters = characters || "ascdefghijklmnopqrstuvwxyzABCDEFGHIJLMOPRSTUVWXYZ1234567890!§$%&?#*+~'";
+        if (StringUtil.isWeakPassword([...new Set(characters.split(""))].join("")))
             throw new Error("Not enough characters to generate password");
+        const result = this.randomString(length, characters);
         if (StringUtil.isStrongPassword(result))
             return result;
-        return this.generatePassword(length);
+        return this.generatePassword(length, characters);
     }
     static randomColorCode() {
         return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    }
+    static wordCount(str) {
+        if (typeof str !== 'string') {
+            return -1;
+        }
+        ;
+        const sus = str.match(/\b\w+\b/);
+        if (!sus) {
+            return 0;
+        }
+        return sus.length;
+    }
+    static getRatingString(rate) {
+        return '★★★★★☆☆☆☆☆'.slice(5 - rate, 10 - rate);
+    }
+    static normalizeLineBreaks(str, lineEnd) {
+        lineEnd = lineEnd || '\n';
+        return str
+            .replace(/\r\n/g, lineEnd)
+            .replace(/\r/g, lineEnd)
+            .replace(/\n/g, lineEnd);
+    }
+    static contains(str, substring, fromIndex) {
+        return str.indexOf(substring, fromIndex) !== -1;
+    }
+    static repeat(str, n) {
+        return (new Array(n + 1)).join(str);
+    }
+    static rpad(str, minLen, ch) {
+        ch = ch || ' ';
+        return (str.length < minLen) ? str + this.repeat(ch, minLen - str.length) : str;
+    }
+    static lpad(str, minLen, ch) {
+        ch = ch || ' ';
+        return ((str.length < minLen) ? this.repeat(ch, minLen - str.length) + str : str);
     }
 }

@@ -19,7 +19,7 @@ export default class Collection {
         if (!object) {
             throw new AlreadyExistsInCollectionError("There is no a key value pair with this key");
         }
-        this.map.remove(this.map.indexOf(object));
+        return this.map.remove(this.map.indexOf(object));
     }
     toString() {
         return `Collection: ${this.map.toString()}`;

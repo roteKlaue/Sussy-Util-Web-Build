@@ -1,4 +1,4 @@
-export default function isPrime(num) {
+export default function (num) {
     if (num < 2) {
         return false;
     }

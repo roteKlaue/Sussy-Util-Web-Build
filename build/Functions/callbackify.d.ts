@@ -1,1 +1,1 @@
-export default function (func: Function, callback: Function, ...params: Array<any>): void;
+export default function (func: Function, callback: Function, ...params: any[]): void;

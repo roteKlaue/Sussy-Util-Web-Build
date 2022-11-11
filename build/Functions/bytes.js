@@ -1,4 +1,4 @@
-export default function bytesToSize(bytes) {
+export default function (bytes) {
     if (bytes === 0)
         return '0 B';
     const sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];

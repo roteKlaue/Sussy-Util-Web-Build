@@ -24,6 +24,8 @@ export default class Set {
         });
     }
     get(index) {
+        if (typeof index !== 'number')
+            throw new TypeError('index must be a number');
         if (index < 0 || index >= this.length()) {
             throw new IndexOutOfBoundsError(`Index: ${index} is out of bounds for length ${this.length()}`);
         }
@@ -42,6 +44,8 @@ export default class Set {
         return new Set(...this.items);
     }
     remove(index) {
+        if (typeof index !== 'number')
+            throw new TypeError('index must be a number');
         if (index < 0 || index >= this.length()) {
             throw new IndexOutOfBoundsError(`Index: ${index} is out of bounds for length ${this.length()}`);
         }

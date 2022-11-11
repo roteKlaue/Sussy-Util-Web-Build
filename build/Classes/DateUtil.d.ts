@@ -3,16 +3,12 @@ export default class DateUtil {
     static mFullNames: string[];
     static dayAbrs: string[];
     static dFullNames: string[];
-    /**
-     * Get the current date and time
-     * @returns {Date}
-     * */
     static getCurrentDate(): Date;
     static today(): Date;
     static tomorrow(): Date;
     static yesterday(): Date;
     static compareDates(dt1: Date, dt2: Date): number;
-    static equals(a: Date, b: Date): boolean;
+    static equals(dt1: Date, dt2: Date): boolean;
     static getMonthAbbr(number: number): string;
     static getMonthFullName(number: number): string;
     static getDayAbbr(number: number): string;
@@ -21,4 +17,6 @@ export default class DateUtil {
     static weekFirstDay(): Date;
     static weekLastDay(): Date;
     static leapYearsInRange(start: number, endYear: number): number[];
+    static getMonthFirstDay(): Date;
+    static getMonthLastDay(): Date;
 }

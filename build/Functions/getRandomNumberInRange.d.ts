@@ -1,1 +1,1 @@
-export default function getRandomNumberInRange(lower?: number, upper?: number): number;
+export default function (lower?: number, upper?: number): number;

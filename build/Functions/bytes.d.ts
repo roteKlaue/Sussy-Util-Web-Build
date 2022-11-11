@@ -1,1 +1,1 @@
-export default function bytesToSize(bytes: number): string;
+export default function (bytes: number): string;
