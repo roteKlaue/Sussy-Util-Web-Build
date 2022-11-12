@@ -1,4 +1,5 @@
-export default function (value) {
+/** @deprecated */
+const isClass = (value) => {
     if (typeof value !== 'function') {
         return false;
     }
@@ -11,4 +12,5 @@ export default function (value) {
         }
     }
     return false;
-}
+};
+export default isClass;

@@ -1,6 +1,6 @@
 {
   "name": "sussyutilbyraphaelbader",
-  "version": "1.4.2",
+  "version": "1.6.0",
   "description": "Util package made by me",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
@@ -27,8 +27,14 @@
     "Koch",
     "Felix",
     "Aron",
-    "Heger"
+    "Heger",
+    "Jan",
+    "Gregor",
+    "Köck"
   ],
   "author": "roteKlaue",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.5"
+  }
 }

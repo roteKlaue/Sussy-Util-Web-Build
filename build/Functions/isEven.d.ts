@@ -1,1 +1,3 @@
-export default function isEven(num: number): boolean;
+/** @deprecated */
+declare const _default: (num: number) => boolean;
+export default _default;

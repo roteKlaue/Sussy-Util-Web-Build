@@ -1,9 +1,9 @@
-import isObject from "./isObject";
+import IsSomething from "../Classes/IsSomething";
 export default function clone(obj) {
     if (Array.isArray(obj)) {
         return obj.map(clone);
     }
-    if (isObject(obj)) {
+    if (IsSomething.isObject(obj)) {
         const _clone = {};
         for (const key in obj) {
             _clone[key] = clone(obj[key]);

@@ -1,3 +1,2 @@
-export default function (ar) {
-    return Array.isArray(ar);
-}
+/** @deprecated */
+export default (ar) => Array.isArray(ar);

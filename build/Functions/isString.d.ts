@@ -1,1 +1,3 @@
-export default function (args: any): boolean;
+/** @deprecated */
+declare const _default: (args: any) => boolean;
+export default _default;

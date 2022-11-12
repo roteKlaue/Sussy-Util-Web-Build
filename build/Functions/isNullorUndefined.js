@@ -1,3 +1,2 @@
-export default function (arg) {
-    return arg === null || arg === undefined;
-}
+/** @deprecated */
+export default (arg) => arg === null || arg === undefined;

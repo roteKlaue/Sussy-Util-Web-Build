@@ -1,1 +1,3 @@
-export default function (value: any): boolean;
+/** @deprecated */
+declare const isClass: (value: any) => boolean;
+export default isClass;

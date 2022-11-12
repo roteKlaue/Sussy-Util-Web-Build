@@ -1,3 +1,2 @@
-export default function (arg) {
-    return arg && (typeof arg === "symbol" || arg instanceof Symbol);
-}
+/** @deprecated */
+export default (arg) => arg && (typeof arg === "symbol" || arg instanceof Symbol);

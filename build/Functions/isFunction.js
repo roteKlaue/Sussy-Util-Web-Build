@@ -1,4 +1,3 @@
-import isClass from "./isClass";
-export default function (a) {
-    return a && (typeof a === 'function' || a instanceof Function) && !isClass(a);
-}
+import { IsSomething } from "../allClasses";
+/** @deprecated */
+export default (a) => a && (typeof a === 'function' || a instanceof Function) && !IsSomething.isClass(a);

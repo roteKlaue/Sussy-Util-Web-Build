@@ -1,3 +1,2 @@
-export default function (a) {
-    return a && (a.constructor === Date.constructor || a instanceof Date);
-}
+/** @deprecated */
+export default (a) => a && (a.constructor === Date.constructor || a instanceof Date);

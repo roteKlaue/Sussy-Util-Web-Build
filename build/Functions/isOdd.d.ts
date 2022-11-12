@@ -1,1 +1,3 @@
-export default function (n: number): boolean;
+/** @deprecated */
+declare const _default: (n: number) => boolean;
+export default _default;

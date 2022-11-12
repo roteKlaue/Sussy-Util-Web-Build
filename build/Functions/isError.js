@@ -1,3 +1,2 @@
-export default function (a) {
-    return (a && a instanceof Error) || (a && a.constructor === Error.constructor);
-}
+/** @deprecated */
+export default (a) => (a && a instanceof Error) || (a && a.constructor === Error.constructor);

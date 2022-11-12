@@ -1,3 +1,2 @@
-export default function isEven(num) {
-    return num / 2 === 0;
-}
+/** @deprecated */
+export default (num) => num / 2 === 0;

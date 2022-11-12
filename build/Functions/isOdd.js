@@ -1,4 +1,3 @@
-import isEven from "./isEven";
-export default function (n) {
-    return !isEven(n);
-}
+import { IsSomething } from "../allClasses";
+/** @deprecated */
+export default (n) => !IsSomething.isEven(n);

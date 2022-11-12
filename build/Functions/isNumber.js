@@ -1,3 +1,1 @@
-export default function (arg) {
-    return arg && (typeof arg === 'number' || /^\d+$/.test(arg));
-}
+export default (arg) => arg && (typeof arg === 'number' || /^\d+$/.test(arg));

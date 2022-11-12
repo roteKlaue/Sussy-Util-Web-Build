@@ -1,6 +1,6 @@
-import isFunction from "./isFunction";
+import IsSomething from "../Classes/IsSomething";
 export default function (func, ...params) {
-    if (!isFunction(func))
+    if (!IsSomething.isFunction(func))
         return null;
     return func(...params);
 }

@@ -1,3 +1,2 @@
-export default function (arg) {
-    return arg && (arg instanceof RegExp || arg.constructor === RegExp.constructor);
-}
+/** @deprecated */
+export default (arg) => arg && (arg instanceof RegExp || arg.constructor === RegExp.constructor);

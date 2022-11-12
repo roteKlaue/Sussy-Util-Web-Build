@@ -1,4 +1,5 @@
-export default function (num) {
+/** @deprecated */
+export default (num) => {
     if (num < 2) {
         return false;
     }
@@ -10,4 +11,4 @@ export default function (num) {
             return false;
     }
     return true;
-}
+};
