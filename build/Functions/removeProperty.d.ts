@@ -1,2 +1,2 @@
-import MutableObject from "../Interfaces/MutableObject";
-export default function (obj: MutableObject, prop: string): MutableObject;
+import MutableObject from "../Types/MutableObject";
+export default function (obj: MutableObject<any>, prop: string): MutableObject<any>;

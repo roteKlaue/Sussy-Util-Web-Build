@@ -60,4 +60,7 @@ export default class Set {
     toString() {
         return `Set: ${this.items.toString()}`;
     }
+    toJSONString() {
+        return JSON.stringify(this.items);
+    }
 }

@@ -7,4 +7,5 @@ export default class Stack<T> {
     empty(): boolean;
     toString(): string;
     toArray(): T[];
+    toJSONString(): string;
 }

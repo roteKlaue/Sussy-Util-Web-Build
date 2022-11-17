@@ -80,4 +80,7 @@ export default class ImprovedArray extends Array {
         this.clear();
         this.push(...newARR);
     }
+    toJSONString() {
+        return JSON.stringify(this);
+    }
 }

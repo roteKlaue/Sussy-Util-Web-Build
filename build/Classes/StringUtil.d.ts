@@ -5,7 +5,8 @@ export default class StringUtil {
     static randomString(length: number, characterset?: string): string;
     static randomDiscordUsername(withSufix?: boolean): string;
     static isDiscordUsername(username: string): boolean;
-    static isNumeric(value: string): boolean;
+    static isInteger(value: string): boolean;
+    static isFloat(value: string): boolean;
     static isStrongPassword(value: string): boolean;
     static isWeakPassword(value: string): boolean;
     static isEmail(value: string): boolean;
@@ -16,6 +17,7 @@ export default class StringUtil {
     static slugify(str: string): string;
     static stripHtmlTags(str: string): string;
     static capitalize(value: string): string;
+    static uncapitalize(value: string): string;
     static isIPv4(value: string): boolean;
     static isIPv6(value: string): boolean;
     static isIP(value: string): boolean;
@@ -38,4 +40,8 @@ export default class StringUtil {
     static repeat(str: string, n: number): string;
     static rpad(str: string, minLen: number, ch?: string): string;
     static lpad(str: string, minLen: number, ch?: string): string;
+    static spilce(str: string, offset: number, removeCount: number | undefined, text?: string): string;
+    static isEmpty(str: string): boolean;
+    static ltrim(str: string): string;
+    static rtrim(str: string): string;
 }

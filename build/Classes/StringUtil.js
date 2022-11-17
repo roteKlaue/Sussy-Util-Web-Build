@@ -30,8 +30,11 @@ export default class StringUtil {
     static isDiscordUsername(username) {
         return !!username.match(/^.{4,32}#\d{4}$/);
     }
-    static isNumeric(value) {
+    static isInteger(value) {
         return /^\d+$/.test(value);
+    }
+    static isFloat(value) {
+        return /^(-)?(\d)*(\.)?(\d)*$/.test(value);
     }
     static isStrongPassword(value) {
         return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(value);
@@ -65,6 +68,9 @@ export default class StringUtil {
     }
     static capitalize(value) {
         return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+    }
+    static uncapitalize(value) {
+        return (value.charAt(0).toLowerCase() + value.slice(1));
     }
     static isIPv4(value) {
         return /^(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(value);
@@ -155,5 +161,20 @@ export default class StringUtil {
     static lpad(str, minLen, ch) {
         ch = ch || ' ';
         return ((str.length < minLen) ? this.repeat(ch, minLen - str.length) + str : str);
+    }
+    static spilce(str, offset, removeCount, text = "") {
+        if (typeof str !== "string" || typeof offset !== 'number' || offset > str.length)
+            return "";
+        const calculatedOffset = offset < 0 ? this.length + offset : offset;
+        return str.substring(0, calculatedOffset) + text + str.substring(calculatedOffset + (removeCount ? removeCount : 0));
+    }
+    static isEmpty(str) {
+        return (!str || str.length === 0 || str === "");
+    }
+    static ltrim(str) {
+        return str.replace(/^\s+/, "");
+    }
+    static rtrim(str) {
+        return str.replace(/\s+$/, "");
     }
 }

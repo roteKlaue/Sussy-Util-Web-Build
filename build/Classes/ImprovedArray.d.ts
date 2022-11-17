@@ -15,4 +15,5 @@ export default class ImprovedArray<T> extends Array<T> {
     countOccurrences(value: T): number;
     static flat(arr: any[]): any[];
     flatten(): void;
+    toJSONString(): string;
 }

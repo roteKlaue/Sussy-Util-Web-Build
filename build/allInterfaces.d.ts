@@ -1,3 +1,4 @@
-import MutableObject from "./Interfaces/MutableObject";
-import MapEntry from "./Interfaces/MapEntry";
-export { MutableObject, MapEntry };
+import MutableObject from "./Types/MutableObject";
+import MapEntry from "./Types/MapEntry";
+import PromiseOr from "./Types/PromiseOr";
+export { MutableObject, MapEntry, PromiseOr, };

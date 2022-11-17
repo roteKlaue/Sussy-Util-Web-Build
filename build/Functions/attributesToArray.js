@@ -5,5 +5,5 @@ export default function (obj, removeNull) {
     if (Array.isArray(obj)) {
         return obj;
     }
-    return Object.keys(obj).filter(obj => !removeNull || obj);
+    return Object.keys(obj).map(e => obj[e]).filter(obj => !removeNull || obj);
 }

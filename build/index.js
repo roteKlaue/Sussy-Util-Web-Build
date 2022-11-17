@@ -1,6 +1,6 @@
-import { Collection, DateUtil, ImprovedArray, IsSomething, Set, Stack, StringUtil } from './allClasses';
+import { Collection, DateUtil, ImprovedArray, IsSomething, Random, Set, Stack, StringUtil } from './allClasses';
 import { AlreadyExistsInCollectionError, IndexOutOfBoundsError } from "./allErrors";
-import { addProperty, asyncHandler, attributesToArray, betterRound, bytesToSize, callbackify, callIfFunction, deepClone, getRandomNumberInRange, getTypeString, hasProperty, hasValue, isArray, isBoolean, isClass, isDate, isError, isEven, isFunction, isNullorUndefined, isNumber, isObject, isOdd, isPrime, isRegExp, isString, isSymbol, measureTime, merge, objectToString, removeFirstDigit, removeLastDigit, removeProperty, removeXDigits, strictJSONParse } from "./allFunctions";
+import { addProperty, asyncHandler, attributesToArray, betterRound, bytesToSize, callbackify, callIfFunction, deepClone, getObjectKeys, getRandomNumberInRange, getTypeString, hasProperty, hasValue, measureTime, merge, objectToMutableObject, objectToString, removeFirstDigit, removeLastDigit, removeProperty, removeXDigits, strictJSONParse } from "./allFunctions";
 /** @deprecated */
 const as = () => {
     console.log("Use this Package by import the wanted class or function:");
@@ -9,4 +9,4 @@ const as = () => {
     console.log("const { Collection } = require('sussyutilbyraphaelbader');");
 };
 export default as;
-export { Collection, DateUtil, ImprovedArray, IsSomething, Set, Stack, StringUtil, AlreadyExistsInCollectionError, IndexOutOfBoundsError, addProperty, asyncHandler, attributesToArray, betterRound, bytesToSize, callbackify, callIfFunction, deepClone, getRandomNumberInRange, getTypeString, hasProperty, hasValue, isArray, isBoolean, isClass, isDate, isError, isEven, isFunction, isNullorUndefined, isNumber, isObject, isOdd, isPrime, isRegExp, isString, isSymbol, measureTime, merge, objectToString, removeFirstDigit, removeLastDigit, removeProperty, removeXDigits, strictJSONParse };
+export { Collection, DateUtil, ImprovedArray, IsSomething, Random, Set, Stack, StringUtil, AlreadyExistsInCollectionError, IndexOutOfBoundsError, addProperty, asyncHandler, attributesToArray, betterRound, bytesToSize, callbackify, callIfFunction, deepClone, getObjectKeys, getRandomNumberInRange, getTypeString, hasProperty, hasValue, measureTime, merge, objectToMutableObject, objectToString, removeFirstDigit, removeLastDigit, removeProperty, removeXDigits, strictJSONParse, };

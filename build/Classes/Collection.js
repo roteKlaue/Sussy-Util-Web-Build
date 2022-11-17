@@ -1,8 +1,8 @@
 import AlreadyExistsInCollectionError from "../Error/AlreadyExistsInCollectionError";
-import impArray from "./ImprovedArray";
+import ImprovedArray from "./ImprovedArray";
 export default class Collection {
     constructor() {
-        this.map = new impArray();
+        this.map = new ImprovedArray();
     }
     get(key) {
         return this.map.find((e) => e.key === key)?.value;
@@ -13,6 +13,10 @@ export default class Collection {
             throw new AlreadyExistsInCollectionError("There is already a key value pair with this key");
         }
         this.map.push({ key: key, value: value });
+    }
+    put(kv) {
+        this.map = this.map.filter((e) => e.key !== kv.key);
+        this.map.push(kv);
     }
     remove(key) {
         const object = this.map.find((e) => e.key === key);
@@ -26,5 +30,17 @@ export default class Collection {
     }
     toArray() {
         return this.map;
+    }
+    count() {
+        return Object.keys(this.map).length;
+    }
+    has(key) {
+        return !!this.map.find((e) => e.key === key);
+    }
+    missing(key) {
+        return !this.has(key);
+    }
+    toJSONString() {
+        return JSON.stringify(this.map);
     }
 }

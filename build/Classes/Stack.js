@@ -1,8 +1,8 @@
 import IndexOutOfBoundsError from "../Error/IndexOutOfBoundsError";
-import impArray from "./ImprovedArray";
+import ImprovedArray from "./ImprovedArray";
 export default class Stack {
     constructor() {
-        this.items = new impArray();
+        this.items = new ImprovedArray();
     }
     ;
     push(...elm) {
@@ -29,5 +29,8 @@ export default class Stack {
     }
     toArray() {
         return this.items;
+    }
+    toJSONString() {
+        return JSON.stringify(this.items);
     }
 }

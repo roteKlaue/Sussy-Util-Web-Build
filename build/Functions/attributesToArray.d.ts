@@ -1,3 +1,2 @@
-export default function (obj: {
-    [k: string]: any;
-}, removeNull: boolean): any[];
+import { MutableObject } from "../allInterfaces";
+export default function (obj: MutableObject<any>, removeNull: boolean): any[];

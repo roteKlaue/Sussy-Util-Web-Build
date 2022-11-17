@@ -13,4 +13,5 @@ export default class Set<T> {
     toArray(): T[];
     changeCheckFunction(fun: Function): void;
     toString(): string;
+    toJSONString(): string;
 }
